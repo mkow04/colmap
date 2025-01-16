@@ -11,6 +11,7 @@ text = '&l&6example &btext &rwith &1color &0codes'
 
 # mapping color codes to ANSI and assigning mapped text to a variable
 colored_text = colmap(text)
+print(colored_text)
 
 # colprint() can take arguments of the print() function
 # It uses the colmap() function and then prints the text
@@ -18,8 +19,11 @@ colprint(text, end='\n')
 ```
 **Output:**
 
-![](./README_files/example_output.png)
+> printed using colmap() and built-in print(): <br />
+![](./README_files/example_output.png)<br />
+> printed using colprint(): <br />
+![](./README_files/example_output.png)<br />
 
 ## Interactive run output:
 
-![](./README_files/interactive_output.gif)
+> ![](./README_files/interactive_output.gif)
