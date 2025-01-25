@@ -1,4 +1,4 @@
-# Colmap v1.0
+# Colmap v1.1
 Simple python library, that provides functions to color text using minecraft-like color codes within the text itself, by replacing them with ANSI codes.
 
 Will be made into a pip package and a PKGBUILD for Arch Linux later on.

@@ -1,11 +1,16 @@
-from typing import Any
+################################
+# Header
 
-__version__ = 'v1.0'
+__version__ = 'v1.1'
 __author__ = 'mkow04'
 __email__ = 'maciejkowalski04@proton.me'
 __license__ = 'GPL v3'
 
+################################
+# Colors
+
 # List convention: (Color-Code, ANSI-Code, Name)
+
 COLORS = [
     ('&0', '\033[30m', 'Black'),
     ('&1', '\033[34m', 'Dark Blue'),
@@ -61,6 +66,9 @@ ESCAPE = [
 
 ALL = COLORS + BACKGROUND_COLORS + EFFECTS + ESCAPE
 
+################################
+# Functions
+
 def colmap(text: str = '') -> str:
     # Takes in a string containing color codes (as specified in the documentation)
     # and replaces them with ANSI codes accordingly.
@@ -78,22 +86,26 @@ def colprint(text: str = '', **kwargs: Any) -> None:
 
     print(colmap(text), **kwargs)
 
+################################
+# Main run
+# Shows an example of all colors
+
 if __name__ == '__main__':
 
     print('\n'+colmap('&l&nThis is an example of all the available formatting:'))
 
     print('\n    '+colmap('&lColors:'))
     for col_code, ansi_code, desc in COLORS:
-        print('        '+colmap(f'&l{col_code.replace('&','&/')}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
 
     print('\n    '+colmap('&lBackground Colors:'))
     for col_code, ansi_code, desc in BACKGROUND_COLORS:
-        print('        '+colmap(f'&l{col_code.replace('&','&/')}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
 
     print('\n    '+colmap('&lEffects:'))
     for col_code, ansi_code, desc in EFFECTS:
-        print('        '+colmap(f'&l{col_code.replace('&','&/')}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
     for col_code, ansi_code, desc in ESCAPE:
-        print('        '+colmap(f'&l{col_code.replace('&','&/')}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
 
     print('')
