@@ -80,7 +80,7 @@ def colmap(text: str = '') -> str:
 
     return text
 
-def colprint(text: str = '', **kwargs: Any) -> None:
+def colprint(text: str = '', **kwargs) -> None:
     # Prints a string after replacing color codes (as specified in the documentation)
     # with ANSI codes accordingly. Takes in arguments of the print() function.
 
