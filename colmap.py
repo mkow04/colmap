@@ -1,10 +1,10 @@
 ################################
 # Header
 
-__version__ = 'v1.1'
+__version__ = 'v1.2'
 __author__ = 'mkow04'
 __email__ = 'maciejkowalski04@proton.me'
-__license__ = 'GPL v3'
+__license__ = 'unlicense'
 
 ################################
 # Colors
@@ -69,6 +69,7 @@ ALL = COLORS + BACKGROUND_COLORS + EFFECTS + ESCAPE
 ################################
 # Functions
 
+
 def colmap(text: str = '') -> str:
     # Takes in a string containing color codes (as specified in the documentation)
     # and replaces them with ANSI codes accordingly.
@@ -80,11 +81,13 @@ def colmap(text: str = '') -> str:
 
     return text
 
+
 def colprint(text: str = '', **kwargs) -> None:
     # Prints a string after replacing color codes (as specified in the documentation)
     # with ANSI codes accordingly. Takes in arguments of the print() function.
 
     print(colmap(text), **kwargs)
+
 
 ################################
 # Main run
@@ -96,16 +99,16 @@ if __name__ == '__main__':
 
     print('\n    '+colmap('&lColors:'))
     for col_code, ansi_code, desc in COLORS:
-        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&", "&/")}&r {col_code}{desc}'))
 
     print('\n    '+colmap('&lBackground Colors:'))
     for col_code, ansi_code, desc in BACKGROUND_COLORS:
-        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&", "&/")}&r {col_code}{desc}'))
 
     print('\n    '+colmap('&lEffects:'))
     for col_code, ansi_code, desc in EFFECTS:
-        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&", "&/")}&r {col_code}{desc}'))
     for col_code, ansi_code, desc in ESCAPE:
-        print('        '+colmap(f'&l{col_code.replace("&","&/")}&r {col_code}{desc}'))
+        print('        '+colmap(f'&l{col_code.replace("&", "&/")}&r {col_code}{desc}'))
 
     print('')
